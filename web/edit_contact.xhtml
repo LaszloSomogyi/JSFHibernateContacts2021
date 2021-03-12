@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Contact Szerkesztés</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Neve: <h:inputText value="#{lister.selectedContact.name}"/> <br/>
+            Email-je: <h:inputText value="#{lister.selectedContact.email}"/> <br/>
+            Született: <h:inputText value="#{lister.selectedContact.birthdate}">
+                <f:convertDateTime pattern="yyyy. MM. dd."/>
+            </h:inputText> <br/>
+            <h:commandButton value="Mégsem" action="index" immediate="true"/>
+            <h:commandButton value="Mentés" action="#{lister.saveContact()}"/>
+        </h:form>
+    </h:body>
+</html>
+
